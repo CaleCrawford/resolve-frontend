@@ -1,6 +1,6 @@
 module.exports = {
   /* config options here */
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'resolve-blog.herokuapp.com'],
   },
 }
