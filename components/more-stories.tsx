@@ -1,13 +1,14 @@
 import ArticlePreview from "./article-preview";
 import Article from "../types/article";
+import ImageType from "../types/image";
 import { getStrapiMedia } from "../lib/media";
 
 type Props = {
   articles: Article[];
 };
 
-function getImageUrl(image: string) {
-  return getStrapiMedia(image);
+function getImageUrl(image: ImageType) {
+  return getStrapiMedia({ media: image });
 }
 
 const MoreStories = ({ articles }: Props) => {

@@ -3,6 +3,7 @@ import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import Author from "../types/author";
+import ImageType from "../types/image";
 import { getStrapiMedia } from "../lib/media";
 
 type Props = {
@@ -14,8 +15,8 @@ type Props = {
   slug: string;
 };
 
-function getImageUrl(image: string) {
-  return getStrapiMedia(image);
+function getImageUrl(image: ImageType) {
+  return getStrapiMedia({ media: image });
 }
 
 const HeroArticle = ({
@@ -52,38 +53,39 @@ const HeroArticle = ({
           <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
           <Avatar
             name={author.name}
-            picture={
-              <section>
-                <div className="mb-8 md:mb-16">
-                  <CoverImage
-                    title={title}
-                    src={author.image}
-                    slug={slug}
-                    height={620}
-                    width={1240}
-                  />
-                </div>
-                <div className="mb-20 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 md:mb-28">
-                  <div>
-                    <h3 className="mb-4 text-4xl leading-tight lg:text-6xl">
-                      <Link as={`/posts/${slug}`} href="/posts/[slug]">
-                        <a className="hover:underline">{title}</a>
-                      </Link>
-                    </h3>
-                    <div className="mb-4 text-lg md:mb-0">
-                      <DateFormatter dateString={date} />
-                    </div>
-                  </div>
-                  <div>
-                    <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
-                    <Avatar
-                      name={author.name}
-                      picture={getImageUrl(author.picture)}
-                    />
-                  </div>
-                </div>
-              </section>
-            }
+            picture="test.jpg"
+            // picture={
+            //   <section>
+            //     <div className="mb-8 md:mb-16">
+            //       <CoverImage
+            //         title={title}
+            //         src={getImageUrl(author.picture)}
+            //         slug={slug}
+            //         height={620}
+            //         width={1240}
+            //       />
+            //     </div>
+            //     <div className="mb-20 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 md:mb-28">
+            //       <div>
+            //         <h3 className="mb-4 text-4xl leading-tight lg:text-6xl">
+            //           <Link as={`/posts/${slug}`} href="/posts/[slug]">
+            //             <a className="hover:underline">{title}</a>
+            //           </Link>
+            //         </h3>
+            //         <div className="mb-4 text-lg md:mb-0">
+            //           <DateFormatter dateString={date} />
+            //         </div>
+            //       </div>
+            //       <div>
+            //         <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
+            //         <Avatar
+            //           name={author.name}
+            //           picture={getImageUrl(author.picture)}
+            //         />
+            //       </div>
+            //     </div>
+            //   </section>
+            // }
           />
         </div>
       </div>

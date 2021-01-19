@@ -16,7 +16,7 @@ type Props = {
 const Index = ({ articles }: Props) => {
   const heroArticle = articles[0];
   const moreArticles = articles.slice(1);
-  const imageUrl = getStrapiMedia(heroArticle.image);
+  const imageUrl = getStrapiMedia({ media: heroArticle.image });
 
   return (
     <>

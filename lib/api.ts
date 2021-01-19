@@ -46,7 +46,7 @@ export function getAllPosts(fields: string[] = []) {
   // return posts
 }
 
-export function getStrapiURL(path = "") {
+export function getStrapiURL(path: string = "") {
   return `${
     process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
   }${path}`;

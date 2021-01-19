@@ -19,8 +19,8 @@ const CoverImage = ({ title, src, slug, height, width }: Props) => {
         "hover:shadow-md transition-shadow duration-200": slug,
       })}
       layout="responsive"
-      width={width}
-      height={height}
+      width={width!}
+      height={height!}
     />
   );
   return (

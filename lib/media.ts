@@ -1,12 +1,13 @@
 import { getStrapiURL } from "./api";
+import ImageType from './../types/image'
 
 type Props = {
-  url: string
+  media: ImageType
 };
 
-export function getStrapiMedia(media: Props): string {
-  const imageUrl = media.url.startsWith("/")
-    ? getStrapiURL(media.url)
-    : media.url;
+export function getStrapiMedia(data: Props): string {
+  const imageUrl = data.media.url.startsWith("/")
+    ? getStrapiURL(data.media.url)
+    : data.media.url;
   return imageUrl;
 }

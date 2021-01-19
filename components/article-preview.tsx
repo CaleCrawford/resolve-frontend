@@ -3,6 +3,7 @@ import DateFormatter from "./date-formatter";
 import PreviewImage from "./preview-image";
 import Link from "next/link";
 import Author from "../types/author";
+import ImageType from "../types/image";
 import { getStrapiMedia } from "../lib/media";
 
 type Props = {
@@ -14,8 +15,8 @@ type Props = {
   slug: string;
 };
 
-function getImageUrl(image: string) {
-  return getStrapiMedia(image);
+function getImageUrl(image: ImageType) {
+  return getStrapiMedia({ media: image });
 }
 
 const ArticlePreview = ({

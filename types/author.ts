@@ -1,7 +1,8 @@
+import ImageType from './image'
+
 type Author = {
   name: string
-  picture: string
-  image: string
+  picture: ImageType
 }
 
 export default Author

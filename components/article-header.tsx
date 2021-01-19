@@ -3,6 +3,7 @@ import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import ArticleTitle from "./article-title";
 import Author from "../types/author";
+import ImageType from "../types/image";
 import { getStrapiMedia } from "../lib/media";
 
 type Props = {
@@ -12,8 +13,8 @@ type Props = {
   author: Author;
 };
 
-function getImageUrl(image: string) {
-  return getStrapiMedia(image);
+function getImageUrl(image: ImageType) {
+  return getStrapiMedia({ media: image });
 }
 
 const ArticleHeader = ({ title, coverImage, date, author }: Props) => {
@@ -28,7 +29,7 @@ const ArticleHeader = ({ title, coverImage, date, author }: Props) => {
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block mb-6 md:hidden">
-          <Avatar name={author.name} picture={author.picture} />
+          <Avatar name={author.name} picture={author.picture.url} />
         </div>
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />

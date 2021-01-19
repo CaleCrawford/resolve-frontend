@@ -21,7 +21,7 @@ type Props = {
 
 const Article = ({ article, moreArticles, preview }: Props) => {
   const router = useRouter();
-  const imageUrl = getStrapiMedia(article.image);
+  const imageUrl = getStrapiMedia({ media: article.image });
   if (!router.isFallback && !article?.slug) {
     return <ErrorPage statusCode={404} />;
   }
