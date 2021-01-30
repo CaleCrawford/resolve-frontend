@@ -46,6 +46,7 @@ const Article = ({ article, moreArticles, preview }: Props) => {
                 date={article.publishedAt}
                 author={article.author}
               />
+              {imageUrl}
               <ArticleBody content={article.content} />
             </article>
           </>
@@ -61,7 +62,7 @@ export async function getStaticPaths() {
   return {
     paths: articles.map((article: ArticleType) => ({
       params: {
-        slug: article.slug.toString(),
+        slug: article.slug,
       },
     })),
     fallback: false,

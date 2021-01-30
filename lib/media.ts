@@ -1,8 +1,8 @@
 import { getStrapiURL } from "./api";
-import ImageType from './../types/image'
+import ImageType from "./../types/image";
 
 type Props = {
-  media: ImageType
+  media: ImageType;
 };
 
 export function getStrapiMedia(data: Props): string {
