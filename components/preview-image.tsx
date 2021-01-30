@@ -30,7 +30,7 @@ const PreviewImage = ({ title, src, slug, height, width }: Props) => {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <div className="relative w-full md:w-5/6 h-80">
+        <div className="relative h-80">
           <Link as={`/articles/${slug}`} href="/articles/[slug]">
             <a aria-label={title}>{image}</a>
           </Link>

@@ -54,6 +54,7 @@ const HeroArticle = ({
           <Avatar
             name={author.name}
             picture={getImageUrl(author.picture)}
+            right={true}
           />
         </div>
       </div>
