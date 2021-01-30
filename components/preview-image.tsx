@@ -1,6 +1,6 @@
 import cn from "classnames";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { ImageLoader, ImageLoaderProps }  from "next/image";
 
 type Props = {
   title: string;
@@ -10,9 +10,14 @@ type Props = {
   width?: number;
 };
 
+const myLoader: ImageLoader = ({ src }: ImageLoaderProps): string => {
+  return src;
+}
+
 const PreviewImage = ({ title, src, slug, height, width }: Props) => {
   const image = (
     <Image
+      loader={myLoader}
       src={src}
       alt={`Cover Image for ${title}`}
       className={cn("shadow-sm", {

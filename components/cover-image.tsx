@@ -10,9 +10,7 @@ type Props = {
   width?: number;
 };
 
-const myLoader: ImageLoader = ({ src, width }: ImageLoaderProps): string => {
-  console.log(src)
-  // return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+const myLoader: ImageLoader = ({ src }: ImageLoaderProps): string => {
   return src;
 }
 
