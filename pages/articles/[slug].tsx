@@ -46,7 +46,6 @@ const Article = ({ article, moreArticles, preview }: Props) => {
                 date={article.publishedAt}
                 author={article.author}
               />
-              {imageUrl}
               <ArticleBody content={article.content} />
             </article>
           </>

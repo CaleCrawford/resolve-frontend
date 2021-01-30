@@ -22,7 +22,7 @@ module.exports = withPlugins(
   {
     /* config options here */
     images: {
-      // loader: 'cloudinary',
+      loader: 'cloudinary',
       domains: ['localhost', 'resolve-blog.herokuapp.com', 'res.cloudinary.com'],
     },
   }
